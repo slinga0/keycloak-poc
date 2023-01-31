@@ -32,14 +32,29 @@ export class AuthService {
   }
 
   public logout() : void {
-    this.keycloakService.logout(window.location.origin);
+
+    // const origin = = 'https://localhost:4200'
+    window.sessionStorage.clear();
+    window.localStorage.clear();
+
+    this.keycloakService.isLoggedIn().then((status) => {
+      if (status) {
+        this.keycloakService.logout();
+      }
+    });
+
+    //this.keycloakService.logout('https://dev-eai-1.dev.terarecon.in/auth');
   }
 
   public redirectToProfile(): void {
+
     this.keycloakService.getKeycloakInstance().accountManagement();
   }
 
   public getRoles(): string[] {
     return this.keycloakService.getUserRoles();
+  }
+  hasUserRole(role: string): boolean {
+    return this.keycloakService?.getUserRoles()?.findIndex((r) => r === role) >= 0;
   }
 }

@@ -1,0 +1,43 @@
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+nav a, button {
+  padding: 5px 10px;
+  text-decoration: none;
+  margin-top: 5px;
+  margin-right: 10px;
+  display: inline-block;
+  background-color: #eee;
+  border-radius: 4px;
+  width: 80px;
+  text-align: center;
+}
+section {
+  display: table;
+}
+
+.example-label {
+  display: table-cell;
+  font-size: 14px;
+  margin-left: 8px;
+  min-width: 120px;
+}
+
+.example-button-row {
+  display: table-cell;
+  max-width: 600px;
+}
+
+.example-button-row .mat-mdc-button-base {
+  margin: 8px 8px 8px 0;
+}
+
+.example-flex-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.example-button-container {
+  display: flex;
+  justify-content: center;
+  width: 120px;
+}

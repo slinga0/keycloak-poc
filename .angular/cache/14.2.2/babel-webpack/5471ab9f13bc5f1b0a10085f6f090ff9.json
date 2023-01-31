@@ -1,0 +1,1 @@
+{"ast":null,"code":"export let UserPermissions = /*#__PURE__*/(() => {\n  class UserPermissions {}\n\n  UserPermissions.SYSTEMADMIN = 'SystemAdmin';\n  UserPermissions.SITEADMIN = 'SiteAdmin';\n  UserPermissions.SITEUSER = 'SiteUser';\n  return UserPermissions;\n})();","map":null,"metadata":{},"sourceType":"module"}

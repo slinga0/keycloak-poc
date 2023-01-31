@@ -1,16 +1,11 @@
 <div class="container">
   <div class="header">
-    <nav>
-      <a *ngIf="loggedIn" routerLink="/admin" routerLinkActive="active">Admin</a>
-      <a *ngIf="loggedIn" routerLink="/user" routerLinkActive="active">User</a>
-      <button *ngIf="!loggedIn" (click)="login()">Login</button>
-      <button *ngIf="loggedIn" (click)="logout()">Logout</button>
-    </nav>
+    <header>
+      <app-nav-bar></app-nav-bar>
+    </header>
   </div>
   <div class="content">
+    <app-home></app-home>
     <router-outlet></router-outlet>
-  </div>
-  <div class="footer">
-    <a href="https://twitter.com/shindesan2012">Santosh Shinde</a>
   </div>
 </div>

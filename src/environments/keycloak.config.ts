@@ -5,9 +5,9 @@
 import { KeycloakConfig } from 'keycloak-js';
 
 const keycloakConfig: KeycloakConfig = {
-  url: 'http://192.168.64.11:32039/auth',
-  realm: 'myrealm',
-  clientId: 'angular',
+    url: 'https://dev-eai-1.dev.terarecon.in/auth',
+    realm: 'master',
+    clientId: 'neuro-client',
 };
 
 export default keycloakConfig;

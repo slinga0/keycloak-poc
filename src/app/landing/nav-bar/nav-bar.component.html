@@ -1,0 +1,18 @@
+<nav >
+  <div style="width: 100%; display: table;">
+    <div style="display: table-row">
+      <div style="width: 600px; display: table-cell;">
+    <!-- <button mat-button color="primary">Primary</button> -->
+    <button style='width:50% !important' class='p-button-success ' *ngIf='rolePermissions.isSystemAdmin' (click)='onNavigateSitePage()'>Create Site/SiteAdmin</button>
+    <button style='width:50% !important'*ngIf='rolePermissions.isSiteAdmin' (click)='onNavigateSitePage()'>Create Department/SiteUser</button>
+    <!-- <a *ngIf='rolePermissions.isSiteAdmin' (click)='onNavigateSitePage()'>Create </a> -->
+    <button style='width:50% !important' (click)='onNavigateDepartmentPage()' *ngIf='rolePermissions.isSiteUser'>View Department</button>
+    <button style='width:50% !important' (click)='onNavigateDepartmentPage()' *ngIf='rolePermissions.isSiteAdmin'>Set Permissions</button>
+  </div>
+    </div>
+  </div>
+  <div style="display: table-cell;float:right">
+    <!-- <button mat-button color="primary">Primary</button> -->
+    <button pbutton class='p-button-success ' (click)='onLogout()'>Logout</button>
+  </div>
+</nav>

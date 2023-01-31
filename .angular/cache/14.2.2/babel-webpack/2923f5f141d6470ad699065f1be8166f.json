@@ -1,0 +1,1 @@
+{"ast":null,"code":"export const RolePermissions = {\n  isSiteAdmin: false,\n  isSiteUser: false,\n  isSystemAdmin: false\n};","map":null,"metadata":{},"sourceType":"module"}

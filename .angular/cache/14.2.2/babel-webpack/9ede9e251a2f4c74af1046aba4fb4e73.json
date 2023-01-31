@@ -1,0 +1,1 @@
+{"ast":null,"code":"const keycloakConfig = {\n  url: 'https://dev-eai-1.dev.terarecon.in/auth',\n  realm: 'eureka-apps',\n  clientId: 'neuro-client'\n};\nexport default keycloakConfig;","map":null,"metadata":{},"sourceType":"module"}

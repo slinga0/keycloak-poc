@@ -1,0 +1,124 @@
+<ng-container>
+  <div *ngIf="dialogData.data.isCreateDepartment; then isCreateDepartment; else isCreateSiteUser"></div>
+  <ng-template #isCreateDepartment>
+    <h2 mat-dialog-title>{{ dialogData.data.dialogTitle }}</h2>
+    <div mat-dialog-content class="mat-typography">
+      <div mat-card style="margin-bottom: 10px">
+        <div mat-card-content>
+          <div class="col-md-12">
+            <div mat-form-field style="margin: 2%">
+              <input
+                type="text"
+                style="width: 100%"
+                matInput
+                class
+                [(ngModel)]='departmentDetails.departmentName'
+                placeholder="Department Name"
+              />
+            </div>
+            <!-- <div mat-form-field style="margin: 2%">
+              <input
+                type="text"
+                style="width: 100%"
+                matInput
+                placeholder="Department url"
+              />
+            </div> -->
+          </div>
+
+        </div>
+        <div>
+          <button
+            mat-button
+            mat-dialog-close
+            color="primary"
+            style="margin: 2%"
+          >
+            Cancel
+          </button>
+          <button
+            mat-button
+            mat-dialog-close
+            cdkFocusInitial
+            color="danger"
+            style="margin: 2%"
+            (click)='addDepartment()'
+          >
+            Add
+          </button>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+  <ng-template #isCreateSiteUser>
+    <h2 mat-dialog-title>{{ dialogData.data.dialogTitle }}</h2>
+    <div mat-dialog-content class="mat-typography">
+      <div mat-card style="margin-bottom: 10px">
+        <div mat-card-content>
+          <div class="col-md-12">
+            <div mat-form-field style="margin: 2%">
+              <input
+                type="text"
+                style="width: 100%"
+                matInput
+                class
+                placeholder="First Name"
+                [(ngModel)]='siteUserDetails.firstName'
+              />
+            </div>
+            <div mat-form-field style="margin: 2%">
+              <input
+                type="text"
+                style="width: 100%"
+                matInput
+                placeholder="Last Name"
+                [(ngModel)]='siteUserDetails.lastName'
+              />
+            </div>
+            <div mat-form-field style="margin: 2%">
+              <input
+                type="email"
+                style="width: 100%"
+                matInput
+                placeholder="Email"
+                [(ngModel)]='siteUserDetails.emailid'
+              />
+            </div>
+            <div mat-form-field style="margin: 2%">
+              <input
+                type="text"
+                style="width: 100%"
+                matInput
+                placeholder="sitename"
+                [(ngModel)]='siteUserDetails.realmName'
+              />
+            </div>
+            <div mat-form-field style="margin: 2%">
+              <mat-checkbox disabled class="example-margin"  [(ngModel)]='siteUserDetails.isAdmin' (change)='onChange($event)'></mat-checkbox>
+            </div>
+          </div>
+        </div>
+        <div>
+          <button
+            mat-button
+            mat-dialog-close
+            color="primary"
+            style="margin: 2%"
+          >
+            Cancel
+          </button>
+          <button
+            mat-button
+            mat-dialog-close
+            cdkFocusInitial
+            color="danger"
+            style="margin: 2%"
+            (click)='createSiteUser()'
+          >
+            Add
+          </button>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</ng-container>

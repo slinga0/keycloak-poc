@@ -1,0 +1,38 @@
+<div style="width: 100%; display: table;">
+  <div style="display: table-row">
+    <div style="width: 600px; display: table-cell;">
+  <cdk-accordion class="example-accordion">
+    <cdk-accordion-item
+      *ngFor="let item of sites; let index = index;"
+      #accordionItem="cdkAccordionItem"
+      class="example-accordion-item"
+      role="button"
+      tabindex="0"
+      (opened)="onOpen(item);"
+      [attr.id]="'accordion-header-' + index"
+      [attr.aria-expanded]="accordionItem.expanded"
+      [attr.aria-controls]="'accordion-body-' + index">
+      <div class="example-accordion-item-header" (click)="accordionItem.toggle()">
+        {{ item }}
+        <span class="example-accordion-item-description">
+          Click to {{ accordionItem.expanded ? 'close' : 'open' }}
+        </span>
+      </div>
+      <div
+        class="example-accordion-item-body"
+        role="region"
+        [style.display]="accordionItem.expanded ? '' : 'none'"
+        [attr.id]="'accordion-body-' + index"
+        [attr.aria-labelledby]="'accordion-header-' + index">
+        {{siteDetails?.displayName}}
+      </div>
+    </cdk-accordion-item>
+  </cdk-accordion>
+</div>
+<div style="display: table-cell;float:right">
+  <button mat-flat-button color="primary" (click)='addSites(true)'>Add Sites </button>
+  <button mat-flat-button color="primary" (click)='addSites(false)'>Add SiteAdmin </button> </div>
+</div>
+</div>
+
+
